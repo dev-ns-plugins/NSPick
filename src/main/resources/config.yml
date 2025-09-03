@@ -1,0 +1,29 @@
+# 🔨 Configuração da Picareta Principal
+# Link para comunidade ou suporte do plugin.
+# Discord: dsc.gg/nsplugins
+
+
+pickaxe:
+  name: "&8&lNSPICKAXE V.1"
+
+  lore:
+    - "&8&lMINERAÇÃO EM ÁREA: &73X3"
+    - ""
+    - "&edsc.gg/nsplugins"
+
+
+  # Tipo de item base. Neste caso, uma picareta de diamante.
+  material: "DIAMOND_PICKAXE"
+
+
+  # Encantamentos aplicados à picareta.
+  enchantments:
+
+    # Equivale ao encantamento "Eficiência V" (mineração mais rápida).
+    dig_speed: 5
+
+    # Equivale ao encantamento "Fortuna III" (mais chance de drops extras).
+    loot_bonus_blocks: 3
+
+    # Define se a picareta é inquebrável. Quando true, ela não perde durabilidade.
+    unbreakable: true

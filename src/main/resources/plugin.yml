@@ -1,0 +1,17 @@
+# Link para comunidade ou suporte do plugin.
+# Discord: dsc.gg/nsplugins
+
+name: NSPick
+main: br.com.nspick.NSPick
+version: 1.0
+api-version: 1.19
+
+commands:
+  nspick:
+    description: Comando principal do NSPick.
+    usage: /nspick [give <jogador>]
+
+permissions:
+  nspick.give:
+    description: Permite dar a picareta para outros jogadores
+    default: op

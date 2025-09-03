@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Versão do modelo POM -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Identificação do projeto -->
+    <groupId>br.com.nspick</groupId>         <!-- Nome do pacote base -->
+    <artifactId>NSPick</artifactId>          <!-- Nome do artefato gerado (JAR) -->
+    <version>1.0</version>                   <!-- Versão do plugin -->
+    <packaging>jar</packaging>               <!-- Tipo de empacotamento -->
+
+    <!-- Metadados -->
+    <name>NSPick</name>                      <!-- Nome do projeto -->
+    <description>Plugin de picareta personalizada com quebra em área 3x3</description>
+
+    <!-- Propriedades globais -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  <!-- Codificação padrão -->
+        <java.version>1.8</java.version>                                    <!-- Versão do Java usada -->
+    </properties>
+
+    <!-- Repositórios externos -->
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
+    <!-- Dependências do projeto -->
+    <dependencies>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>  <!-- Compatível com servidores 1.8.8 -->
+            <scope>provided</scope>                <!-- Não será incluído no JAR final (usado pelo servidor) -->
+        </dependency>
+    </dependencies>
+
+    <!-- Configuração de build -->
+    <build>
+        <plugins>
+            <!-- Plugin para compilar com Java 8 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>  <!-- Código-fonte em Java 8 -->
+                    <target>1.8</target>  <!-- Bytecode gerado para Java 8 -->
+                </configuration>
+            </plugin>
+
+            <!-- Plugin para gerar o JAR do plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>  <!-- Inclui classpath no manifest -->
+                            <mainClass>br.com.nspick.NSPick</mainClass>  <!-- Classe principal do plugin -->
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
